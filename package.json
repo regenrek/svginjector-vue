@@ -2,7 +2,7 @@
   "name": "svginjector-vue",
   "version": "0.0.1",
   "license": "MIT",
-  "main": "dist/svg-injector-vue.js",
+  "main": "dist/svginjector-vue.common.js",
   "scripts": {
     "build": "vue-cli-service build",
     "build-bundle": "vue-cli-service build --target lib --name svginjector-vue ./src/index.js",
