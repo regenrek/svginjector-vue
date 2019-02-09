@@ -8,6 +8,7 @@ module.exports = function nuxtSGVInjectorVue(moduleOptions = {}) {
     // Register plugin, pasing options to plugin template
     this.addPlugin({
         src: resolve(__dirname, 'plugin.template.js'),
+        fileName: 'svginjector-vue.js',
         ssr: false,
         options
     })
