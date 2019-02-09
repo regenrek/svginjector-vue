@@ -1,5 +1,7 @@
 <template>
-  <img ref="img" :class="className" :src="src">
+  <div>
+    <img ref="img" :class="className" :src="src">
+  </div>
 </template>
 <script>
 import SVGInjector from 'svg-injector'
