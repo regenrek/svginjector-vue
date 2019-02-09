@@ -5,8 +5,6 @@
 </template>
 <script>
 import SVGInjector from 'svg-injector'
-//const isBrowser = typeof window !== 'undefined'
-//const SVGInjector = isBrowser ? require("svg-injector") : undefined;
 
 export default {
     name: 'SvgInjector',
@@ -29,9 +27,6 @@ export default {
         }
     },
     mounted() {
-        console.debug(this.$refs.img)
-        console.debug(this.$children)
-        console.debug(SVGInjector)
         SVGInjector(this.$refs.img, this.options, this.callback);
     }
 }

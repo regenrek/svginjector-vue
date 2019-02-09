@@ -3,10 +3,7 @@
  A dynamic inline SVG injection component for vue using [SVGInjector](https://github.com/iconic/SVGInjector)
  
 
-## Setup
-
-
-### Install
+## Install
 
 ```
 #with npm
@@ -20,8 +17,9 @@ yarn add svginjector-vue
 ```
 
 
+## Setup
 
-### Vanilla vue
+### vue only
 
 Then, register SVGInjector plugin in your app entry point:
 
@@ -34,20 +32,49 @@ Vue.use(SvgInjector);
 
 
 
-### Nuxt
+### Nuxt Plugin
 
-If you're using nuxt instead of the vanilla approach
-you can add it as module to your nuxt.config.js/nuxt.js
+If you're using nuxt you can include it as plugin or module. We recommend
+the module approach (below)
 
 
+nuxt.config.js (nuxt.js)
+```json
+plugins: [
+  {src: '~/plugins/svginjector', ssr:false}
+]
 ```
+
+plugins/svginjector.js
+```js
+import Vue from 'vue'
+import SVGInjectorVue from 'svginjector-vue'
+
+Vue.use(SVGInjectorVue)
+```
+
+
+### Nuxt Module
+
+
+__Recommend:__ You can add it as module to your nuxt.config.js/nuxt.js
+
+
+```json
 modules: [
    'svginjector/nuxt'
    
    // or 
-   ['svginjector/nuxt', {}]
+   ['svginjector/nuxt', {ssr: false}]
  ]
 ```
+
+
+## Usage
+
+````vue
+ <svg-injector :class-name="'js-svg-injector'" :src="require('~/assets/svg/image.svg')"></svg-injector>
+````
 
 
 ### Known Issues

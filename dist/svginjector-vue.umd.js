@@ -737,27 +737,32 @@ if (typeof window !== 'undefined') {
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
 var es6_function_name = __webpack_require__("7f7f");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"27ac39f6-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/svg-injector.vue?vue&type=template&id=2cd91821&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('img',{class:_vm.imgClass,attrs:{"src":_vm.imgSrc}})}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"bb32544c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/svg-injector.vue?vue&type=template&id=a8885ab8&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('img',{ref:"img",class:_vm.className,attrs:{"src":_vm.src}})])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/svg-injector.vue?vue&type=template&id=2cd91821&
+// CONCATENATED MODULE: ./src/svg-injector.vue?vue&type=template&id=a8885ab8&
+
+// EXTERNAL MODULE: ./node_modules/svg-injector/svg-injector.js
+var svg_injector = __webpack_require__("dc40");
+var svg_injector_default = /*#__PURE__*/__webpack_require__.n(svg_injector);
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/svg-injector.vue?vue&type=script&lang=js&
 //
 //
 //
-var isBrowser = typeof window !== 'undefined';
-var SVGInjector = isBrowser ? __webpack_require__("dc40") : undefined;
+//
+//
+
 /* harmony default export */ var svg_injectorvue_type_script_lang_js_ = ({
   name: 'SvgInjector',
   props: {
-    imgClass: {
+    className: {
       type: String,
       default: ''
     },
-    imgSrc: {
+    src: {
       type: String,
       default: ''
     },
@@ -773,7 +778,7 @@ var SVGInjector = isBrowser ? __webpack_require__("dc40") : undefined;
     }
   },
   mounted: function mounted() {
-    SVGInjector(this.$children, this.options, this.callback);
+    svg_injector_default()(this.$refs.img, this.options, this.callback);
   }
 });
 // CONCATENATED MODULE: ./src/svg-injector.vue?vue&type=script&lang=js&
@@ -892,14 +897,14 @@ var component = normalizeComponent(
   
 )
 
-/* harmony default export */ var svg_injector = (component.exports);
+/* harmony default export */ var src_svg_injector = (component.exports);
 // CONCATENATED MODULE: ./src/index.js
 
 
 /* harmony default export */ var src = ({
   install: function install(Vue) {
     var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-    Vue.component(svg_injector.name, svg_injector);
+    Vue.component(src_svg_injector.name, src_svg_injector);
   }
 });
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
