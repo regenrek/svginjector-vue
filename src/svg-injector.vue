@@ -1,10 +1,12 @@
 <template>
   <div>
-    <img ref="img" :class="className" :src="src">
+    <img ref="img" :class="className" :src="src" :alt="alt">
   </div>
 </template>
 <script>
-import SVGInjector from 'svg-injector'
+let SVGInjector;
+if(process.browser)
+    SVGInjector = require('svg-injector')
 
 export default {
     name: 'SvgInjector',
@@ -21,13 +23,19 @@ export default {
             type: Function,
             default: () => true
         },
+        alt: {
+            type: String,
+            default: ''
+        },
         options: {
             type: Object,
             default: undefined
         }
     },
     mounted() {
-        SVGInjector(this.$refs.img, this.options, this.callback);
+        if(typeof SVGInjector !== undefined) {
+            SVGInjector(this.$refs.img, this.options, this.callback);
+        }
     }
 }
 </script>
