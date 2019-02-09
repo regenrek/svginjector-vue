@@ -1,6 +1,6 @@
 {
   "name": "svginjector-vue",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "license": "MIT",
   "main": "dist/svginjector-vue.common.js",
   "scripts": {
