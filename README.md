@@ -62,25 +62,29 @@ __Recommend:__ You can add it as module to your nuxt.config.js/nuxt.js
 
 ```json
 modules: [
-   'svginjector/nuxt'
-   
-   // or 
-   ['svginjector/nuxt', {ssr: false}]
+   'svginjector-vue'
  ]
 ```
 
 
 ## Usage
 
+
 ````vue
- <svg-injector :class-name="'js-svg-injector'" :src="require('~/assets/svg/image.svg')"></svg-injector>
+    <svg-injector :class-name="'js-svg-injector'" :src="require('~/assets/svg/reports.svg')"></svg-injector>
 ````
 
+### Nuxt Universal (SSR)
+````vue
+ <no-ssr>
+   <svg-injector :class-name="'js-svg-injector'" :src="require('~/assets/svg/reports.svg')"></svg-injector>
+ </no-ssr>
+````
 
-### Known Issues
+### Open Tasks
 
-* This is only tested with nuxt 2
+* Possible to make it usable for ssr? svginjector use window object
 
 ### Changelog
 
-* 0.0.1 First Commit 
+* 1.0.0 Working version 
