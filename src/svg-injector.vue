@@ -1,5 +1,5 @@
 <template>
-  <img :class="imgClass" :src="imgSrc">
+  <img ref="img" :class="class" :src="src">
 </template>
 <script>
 const isBrowser = typeof window !== 'undefined'
@@ -8,11 +8,11 @@ const SVGInjector = isBrowser ? require("svg-injector") : undefined;
 export default {
     name: 'SvgInjector',
     props: {
-        imgClass: {
+        class: {
             type: String,
             default: ''
         },
-        imgSrc: {
+        src: {
             type: String,
             default: ''
         },
@@ -26,7 +26,7 @@ export default {
         }
     },
     mounted() {
-        SVGInjector(this.$children, this.options, this.callback);
+        SVGInjector(this.$refs.img, this.options, this.callback);
     }
 }
 </script>
